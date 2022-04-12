@@ -1,0 +1,23 @@
+1. ECMAScript Introduction - https://262.ecma-international.org/
+2. ECMAScript features table - https://kangax.github.io/compat-table/es2016plus/
+3. Теория:
+   1) let, const, var - https://learn.javascript.ru/variables
+      - области видимости (глобальная, функциональная, блочная, try catch, eval)
+      - поднятие - https://developer.mozilla.org/ru/docs/Glossary/Hoisting
+      - этапы компиляции - https://github.com/azat-io/you-dont-know-js-ru/blob/master/scope%20%26%20closures/ch1.md
+      - временная мертвая зона - https://jsinthebits.com/what-is-the-temporal-dead-zone-e41369d4/
+   2) деструкрутизация  https://learn.javascript.ru/destructuring-assignment
+      - объектов
+      - массивов
+      - дефолтные значения
+
+   3) Спред оператор
+
+   4) Шаблонные строки
+
+   5) Стрелочные функции
+
+4) Практика
+
+
+
