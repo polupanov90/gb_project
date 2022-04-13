@@ -94,6 +94,9 @@ function learnVariablesExample_10() {
 // learnVariablesExample_10()
 
 
+
+
+
 /*  Деструкуризация */
 function destructurizationExample_1() {
   const colorList = ['red', 'green', 'blue'];
@@ -168,8 +171,11 @@ function destructurizationExample_6() {
 }
 // destructurizationExample_6()
 
-/* Спред оператор */
 
+
+
+
+/* Спред оператор */
 function spreadExample_1() {
   const priority = 'low';
   
@@ -231,6 +237,11 @@ function spreadExample_4() {
 }
 // spreadExample_4()
 
+
+
+
+
+
 /* Шаблонные строки */
 function stringLiteralsExample_1() {
   function getTime() {
@@ -264,8 +275,6 @@ function stringLiteralsExample_1() {
  }
 // arrowFunctionExample_1()
 
-
-
 function arrowFunctionExample_2() {
   function test() {
     const fu = () => {
@@ -284,5 +293,16 @@ function arrowFunctionExample_2() {
 // arrowFunctionExample_2()
 
 
+/*  Дефолтные аргументы */
+
+function defaultArgumentsExample_1(name = 'Default Name', age = 20, address = 'Moscow') {
+   console.log ({
+     name,
+     age,
+     address
+   })
+}
+
+// defaultArgumentsExample_1('John',undefined,'Rio')
 
 
