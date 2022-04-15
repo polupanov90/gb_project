@@ -1,8 +1,8 @@
 const goods = [
-  { image: `img.src='Shoes.png'`, title: 'Shirt', price: 150 },
-  { image: `img.src='Shoes.png'`, title: 'Socks', price: 50 },
-  { image: `img.src='Shoes.png'`, title: 'Jacket', price: 350 },
-  { image: `img.src='Shoes.png'`, title: 'Shoes', price: 250 },
+  { image: `img.src='img/Shoes.png'`, title: 'Shirt', price: 150 },
+  { image: `img.src='img/Shoes.png'`, title: 'Socks', price: 50 },
+  { image: `img.src='img/Shoes.png'`, title: 'Jacket', price: 350 },
+  { image: `img.src='img/Shoes.png'`, title: 'Shoes', price: 250 },
 ];
 
 const renderGoodsItem = (image, title = 'test', price) => {
