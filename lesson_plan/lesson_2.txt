@@ -1,9 +1,12 @@
-1. Примитивы и ссылочные типы - https://github.com/azat-io/you-dont-know-js-ru/blob/master/types%20%26%20grammar/README.md#you-dont-know-js-types--grammar
-2. Примитивы как объекты
-3. Конструкторы
-4. Прототипы Объекта
-5. Прототипы Функции уонструктора
-6. Прототипное наследование
-7. Классы и их наследование
+1. Теория
+   1) Примитивы и ссылочные типы - https://github.com/azat-io/you-dont-know-js-ru/blob/master/types%20%26%20grammar/README.md#you-dont-know-js-types--grammar
+   2) Примитивы как объекты
+   3) Конструкторы - https://learn.javascript.ru/constructor-new
+   4) Прототипы Объекта - https://learn.javascript.ru/prototype-inheritance
+   5) Прототипы Функции конструктора - https://learn.javascript.ru/function-prototype
+   6) Прототипное наследование - https://learn.javascript.ru/prototypes
+   7) Классы и их наследование - https://learn.javascript.ru/classes
+
+2. Практика
 
 
