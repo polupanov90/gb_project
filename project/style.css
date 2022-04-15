@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-template-rows: max-content auto;
+    gap: 40px;
+}
+
+header {
+    height: 100px;
+    display: grid;
+    grid-template-columns: auto max-content;
+    background-color: black;
+}
+
+.title {
+    color: white;
+    padding: 10px;
+}
+
+.actions {
+    padding: 10px;
+}
+
+button {
+    padding: 10px
+}
+
+.goods-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px
+}
+
+.goods-item {
+    width: 200px;
+    height: 300px;
+    padding: 10px;
+    box-sizing: border-box;
+    outline: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
