@@ -5,7 +5,7 @@ const goods = [
   { title: 'Shoes', price: 250 },
 ];
 
-const renderGoodsItem = (title, price) => {
+const renderGoodsItem = (title = 'test', price = 0) => {
   return `
     <div class="goods-item">
       <h3>${title}</h3>
