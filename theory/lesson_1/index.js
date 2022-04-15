@@ -31,11 +31,11 @@ function learnVariablesExample_2() {
 // learnVariablesExample_2();
 
 function learnVariablesExample_3() {
- function testVariable() {
-   var x = 'test';
- }
+  function testVariable() {
+    var x = 'test';
+  }
   testVariable();
- console.log(x);
+  console.log(x);
 }
 // learnVariablesExample_3();
 
