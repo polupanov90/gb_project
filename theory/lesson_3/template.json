@@ -1,0 +1,12 @@
+{
+   "name": "John",
+   "age": 20,
+   "data": {
+      "address": "Moscow",
+      "isUser": true,
+      "products": [
+         "main",
+         "common"
+      ]
+   }
+}
