@@ -1,0 +1,4 @@
+1. Promises - https://learn.javascript.ru/promise-basics
+2. Fetch - https://learn.javascript.ru/fetch
+3. ссылка this
+4. Регулярные выражения - https://learn.javascript.ru/regular-expressions
