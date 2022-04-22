@@ -9,7 +9,5 @@
 2. JSON and XML - https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON
 3. AJAX - https://developer.mozilla.org/ru/docs/Web/Guide/AJAX
 4. XMLHttpRequest - https://learn.javascript.ru/xmlhttprequest
-5. Promises - https://learn.javascript.ru/promise-basics
-6. Fetch - https://learn.javascript.ru/fetch
-7. Практика
+5. Практика
 
