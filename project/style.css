@@ -12,7 +12,7 @@ body {
 header {
     height: 100px;
     display: grid;
-    grid-template-columns: auto max-content;
+    grid-template-columns: auto max-content max-content;
     background-color: black;
 }
 
@@ -21,7 +21,7 @@ header {
     padding: 10px;
 }
 
-.actions {
+.actions, .search {
     padding: 10px;
 }
 
@@ -44,4 +44,8 @@ button {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.goods-search {
+    height: 36px
 }
