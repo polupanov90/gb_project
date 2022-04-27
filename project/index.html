@@ -4,22 +4,30 @@
    <meta charset="UTF-8">
    <title>eShop</title>
    <link rel="stylesheet" href="style.css">
+   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+   <script src="script.js"></script>
 </head>
 <body>
-   <header>
-      <h1 class="title">eShop</h1>
-
-      <div class="search">
-         <input type="text" class="goods-search" />
-         <button class="search-button" type="button">Искать</button>
-      </div>
-      <div class="actions">
-         <button class="cart-button" type="button">Корзина</button>
-      </div>
-   </header>
-   <main>
-      <div class="goods-list"></div>
-   </main>
-   <script src="script.js"></script>
+   <div id="root">
+      <header>
+         <h1 class="title">eShop</h1>
+         <div class="search">
+            <input type="text" class="goods-search" v-model="search"/>
+            <button class="search-button" type="button" v-on:click="filterItems">Искать</button>
+         </div>
+         <div class="actions">
+            <button class="cart-button" type="button">Корзина</button>
+         </div>
+      </header>
+      <main>
+         <div class="goods-list">
+            <div class="goods-item" v-for="item in filteredItems">
+               <h3>{{ item.product_name }}</h3>
+               <p>{{ item.price }}</p>
+            </div>
+         </div>
+      </main>
+      <div>{{ calculatePrice }}</div>
+   </div>
 </body>
 </html>
