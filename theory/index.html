@@ -4,25 +4,14 @@
    <meta charset="UTF-8">
    <title>Theory</title>
    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
-   <script src="lesson_5/index.js"></script>
+   <script src="lesson_6/index.js"></script>
 </head>
 <body>
    <div id="root">
-      <h1>{{ title }}</h1>
-      <div v-if="flag" >flag is true</div>
-      <div v-else >flag is false</div>
-      <div v-for="item in items">{{ item }}</div>
-      <div>
-         <input type="text" v-model="inputString">
-         <span>{{ inputString }}</span>
-      </div>
-      <div>
-         <input type="checkbox" v-model="textIsShow">
-         <span v-if="textIsShow"> text is show </span>
-      </div>
-      <div v-on:click="sayInputString">test</div>
-      <div>{{ computedTitle }}</div>
+      <component-a
+            text="content"
+            @event-a="fu"
+      ></component-a>
    </div>
-
 </body>
 </html>
