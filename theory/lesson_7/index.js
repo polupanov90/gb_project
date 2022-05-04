@@ -1,4 +1,7 @@
 import { writeFile, readFile } from 'fs/promises'
+import express from 'express';
+import cors from 'cors';
+
 const FILE_PATH = './file.txt'
 const JSON_PATH = './object.json'
 
@@ -56,3 +59,19 @@ const jsonWorkTemplate = () => {
 // jsonWorkTemplate()
 
 
+/* ToDo Создание сервера на express */
+const serverTemplate = () => {
+  const app = express();
+  app.use(express.json());
+  app.use(express.static('public'))
+  app.use(cors());
+  
+  app.get('/', (res, req) => {
+    req.send('hello world!');
+  });
+  
+  app.listen('8000', () => {
+    console.log('server is starting!')
+  })
+}
+// serverTemplate()
