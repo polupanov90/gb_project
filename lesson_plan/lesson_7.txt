@@ -3,4 +3,5 @@
 3. установка node js - https://nodejs.org/en/download/
 4. запись в файл - https://nodejs.org/dist/latest-v16.x/docs/api/fs.html#fspromiseswritefilefile-data-options
 5. чтение из файла - https://nodejs.org/dist/latest-v16.x/docs/api/fs.html#fspromisesreadfilepath-options
+5. передача статичных файлов - https://nodejs.org/dist/latest-v16.x/docs/api/fs.html#fspromisesreadfilepath-options
 6. работа с json файлом
