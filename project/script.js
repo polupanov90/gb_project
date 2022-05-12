@@ -1,16 +1,11 @@
-const BASE_URL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/';
-const GET_GOODS_ITEMS = `${BASE_URL}catalogData.json`
-const GET_BASKET_GOODS_ITEMS = `${BASE_URL}getBasket.json`
+const BASE_URL = 'http://localhost:8000/';
+const GET_GOODS_ITEMS = `${BASE_URL}goods`
+// const GET_BASKET_GOODS_ITEMS = `${BASE_URL}getBasket.json`
 
 function service(url) {
   return fetch(url)
   .then((res) => res.json())
 }
-
-
-service(GET_BASKET_GOODS_ITEMS).then((data) => {
-  debugger
-})
 
 
 function init() {
@@ -42,7 +37,10 @@ function init() {
             </div>
          </div>
       </div>
-    `
+    `,
+    mounted() {
+    
+    }
   })
   
   const goodsItem = Vue.component('goods-item', {
