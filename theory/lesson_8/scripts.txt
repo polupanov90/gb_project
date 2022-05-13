@@ -12,3 +12,6 @@ npm install --save-dev html-webpack-plugin
 
 5. Установка дев сервера
 npm install --save-dev webpack-dev-server
+
+5. Установка JEST
+npm install --save-dev jest
