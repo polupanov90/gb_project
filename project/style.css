@@ -31,7 +31,7 @@ header {
     padding: 10px;
 }
 
-button {
+.custom-button {
     padding: 10px
 }
 
@@ -95,4 +95,20 @@ button {
 
 .basket-card__content {
     padding: 10px;
+}
+
+.basket-item {
+    padding: 10px;
+    display: flex;
+    gap: 30px
+}
+.basket-item__title {
+    font-weight: bold;
+}
+.basket-item__total {
+    margin-left: 100px;
+}
+
+.basket-item__count button {
+    padding: 0 5px
 }

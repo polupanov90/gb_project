@@ -8,10 +8,32 @@ function service(url) {
 }
 
 
+
 function init() {
+  
+  const BasketItem = Vue.component('basket-item', {
+    props: [
+      'item'
+    ],
+    template: `
+      <div class="basket-item">
+        <div class="basket-item_field">
+          <span class="basket-item__title">{{ item.data.product_name }}</span>
+          <span class="basket-item__price">( {{ item.data.price }}р. )</span>
+        </div>
+         <div class="basket-item__count">
+           <span>{{ item.count }}шт.</span>
+           <button>+</button>
+           <button>-</button>
+         </div>
+         <div class="basket-item__total">Всего: {{ item.total }}р.</div>
+      </div>
+    `
+  })
+  
   const CustomButton = Vue.component('custom-button', {
     template: `
-      <button class="search-button" type="button" v-on:click="$emit('click')">
+      <button class="search-button custom-button" type="button" v-on:click="$emit('click')">
          <slot></slot>
       </button>
     `
@@ -33,7 +55,30 @@ function init() {
                ></div>
             </div>
             <div class="basket-card__content">
-               content
+               <basket-item
+                  :item="{
+                    id: '1',
+                    'count': 10,
+                    'data': {
+                       'id': '1',
+                       'product_name': 'product 1',
+                       'price': 200
+                    },
+                    'total': 1000
+                 }"
+               ></basket-item>
+               <basket-item
+                  :item="{
+                    id: '1',
+                    'count': 10,
+                    'data': {
+                       'id': '1',
+                       'product_name': 'product 1',
+                       'price': 200
+                    },
+                    'total': 1000
+                 }"
+               ></basket-item>
             </div>
          </div>
       </div>
@@ -61,7 +106,7 @@ function init() {
       items: [],
       filteredItems: [],
       search: '',
-      cardIsVision: false
+      cardIsVision: true
     },
     methods: {
       setVisionCard() {
