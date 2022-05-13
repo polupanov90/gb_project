@@ -1,0 +1,5 @@
+1. Установка webpack - https://webpack.js.org/guides/getting-started/#basic-setup
+2. Создание конфигурации webpack - https://webpack.js.org/guides/getting-started/#using-a-configuration
+3. Добавление загрузчиков - https://webpack.js.org/guides/asset-management/
+4. Добавление шаблонизатора - https://webpack.js.org/guides/output-management/#setting-up-htmlwebpackplugin
+5. Добавление дев сервера - https://webpack.js.org/guides/output-management/#setting-up-htmlwebpackplugin

@@ -1,0 +1,14 @@
+1. установка webpack
+npm install webpack webpack-cli --save-dev
+
+2. Запуск webpack
+npx webpack
+
+3. Установка загрузчиков стилей
+npm install --save-dev style-loader css-loader
+
+4. Установка плагина для html документа
+npm install --save-dev html-webpack-plugin
+
+5. Установка дев сервера
+npm install --save-dev webpack-dev-server
