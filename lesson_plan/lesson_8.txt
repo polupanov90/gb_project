@@ -3,3 +3,4 @@
 3. Добавление загрузчиков - https://webpack.js.org/guides/asset-management/
 4. Добавление шаблонизатора - https://webpack.js.org/guides/output-management/#setting-up-htmlwebpackplugin
 5. Добавление дев сервера - https://webpack.js.org/guides/output-management/#setting-up-htmlwebpackplugin
+6. Устновка и работа с JEST - https://jestjs.io/ru/docs/getting-started
