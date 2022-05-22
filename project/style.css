@@ -1,0 +1,37 @@
+header {
+  height: 50px;
+  background: darkred;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header button {
+  border: none;
+  background: orange;
+  border-radius: 5px;
+  color: white;
+}
+
+.goods-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.goods-item {
+  border: 1px solid black;
+  margin: 5px;
+  width: 200px;
+  height: 350px;
+}
+/*# sourceMappingURL=style.css.map */
