@@ -1,0 +1,26 @@
+header {
+    height: 50px;
+    background: darkred;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    button {
+        border: none;
+        background: orange;
+        border-radius: 5px;
+        color: white;
+    }
+}
+
+.goods-list {
+    display: flex;
+    justify-content: center;
+
+}
+
+.goods-item {
+    border: 1px solid black;
+    margin: 5px;
+    width: 200px;
+    height: 350px;
+}
