@@ -6,7 +6,7 @@ const goods = [
 ];
 
 class GoodsItem {
-  constructor({ title, price }) {
+  constructor({ title = '', price = 0 }) {
     this.title = title;
     this.price = price;
   }
@@ -21,15 +21,24 @@ class GoodsItem {
 }
 class GoodsList {
   items = [];
+  sum = 0;
   fetchGoods() {
     this.items = goods;
   }
+
+  // считаем суммарную стоимость всех элементов goods
+  getSum() {
+    const a = this.items;
+    this.items.forEach(elem => this.sum += elem.price);
+    console.log(this.sum);
+  }
+
   render() {
     const goods = this.items.map(item => {
       const goodItem = new GoodsItem(item);
       return goodItem.render()
     }).join('');
-  
+
     document.querySelector('.goods-list').innerHTML = goods;
   }
 }
@@ -37,3 +46,4 @@ class GoodsList {
 const goodsList = new GoodsList();
 goodsList.fetchGoods();
 goodsList.render();
+console.log(goodsList.getSum());

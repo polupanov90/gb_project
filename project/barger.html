@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        .container {
+            display: flex;
+            border: 1px solid gray;
+            width: 750px;
+        }
+
+        .block {
+            padding-left: 20px;
+            padding-right: 20px;
+            width: 250px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Бургер</h1>
+    <div class="container">
+        <div class="block">
+            <h2>Размер бургера</h2>
+            <p><input type="radio" name="burger" date-cost="50" date-kkal="20" class="menu">Маленький</p>
+            <p><input type="radio" name="burger" date-cost="100" date-kkal="40" class="menu">Большой</p>
+        </div>
+        <div class="block">
+            <h2>Наполнение</h2>
+            <p><input type="radio" name="topping" date-cost="10" date-kkal="20" class="menu">Сыр</p>
+            <p><input type="radio" name="topping" date-cost="20" date-kkal="5" class="menu">Салат</p>
+            <p><input type="radio" name="topping" date-cost="15" date-kkal="10" class="menu">Картофель</p>
+        </div>
+        <div class="block">
+            <h3>Итоги:</h3>
+            <p>Калорийность:<span id="kkal"></span></p>
+            <p>Цена:<span id="price"></span></p>
+            <button id="result">Готово</button>
+        </div>
+    </div>
+
+
+    <script>
+
+        document.getElementById('result').onclick = getResult;
+
+        function getResult() {
+            const menu = document.getElementsByClassName('menu');
+            let price = 0;
+            let kkal = 0;
+            for (var i = 0; i < menu.length; i++) {
+                if (menu[i].checked) {
+                    price += parseFloat(menu[i].getAttribute('date-cost'));
+                    kkal += parseFloat(menu[i].getAttribute('date-kkal'));
+                }
+            }
+            document.getElementById('price').innerHTML = price;
+            document.getElementById('kkal').innerHTML = kkal;
+        }
+    </script>
+</body>
+
+</html>
