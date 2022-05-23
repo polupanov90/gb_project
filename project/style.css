@@ -3,17 +3,38 @@
     margin: 0;
 }
 
-body {
-    display: grid;
-    grid-template-rows: max-content auto;
-    gap: 40px;
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+svg {
+    fill: white;
+    width: 45px;
+}
+
+svg:hover,
+a:hover {
+    fill: rgb(172, 191, 255);
+    color: rgb(172, 191, 255);
+    cursor: pointer;
+    transition: fill 0.2s, color 0.2s;
+}
+
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
 }
 
 header {
-    height: 100px;
-    display: grid;
-    grid-template-columns: auto max-content;
-    background-color: black;
+    background-color: rgb(27, 17, 165);
+    margin-bottom: 60px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .title {
@@ -26,7 +47,9 @@ header {
 }
 
 button {
-    padding: 10px
+    padding: 0;
+    background: none;
+    border: none;
 }
 
 .goods-list {
@@ -38,7 +61,7 @@ button {
 .goods-item {
     width: 200px;
     height: 300px;
-    padding: 10px;
+    padding: 20px;
     box-sizing: border-box;
     outline: 1px solid black;
     display: flex;
