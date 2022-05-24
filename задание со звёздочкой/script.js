@@ -1,6 +1,9 @@
 // меню бургеры
 
-const button = document.querySelector(".button");
+const button = document.querySelector(".buttonOrder");
+const buttonPrace = document.querySelector(".buttonPrace");
+const buttonCalory = document.querySelector(".buttonCalory");
+
 const cart = document.querySelector(".cart");
 let check = document.querySelectorAll('input');
 const tipBurger = document.querySelectorAll(".tipBurger");
@@ -132,7 +135,7 @@ console.log(obj);
 
 
 
-let objOrder = {};
+let objOrder = [];
 
 const whotClick = () => {     // функция собирающая чеки
 
@@ -145,15 +148,12 @@ const whotClick = () => {     // функция собирающая чеки
 			checkMass2.push(item);
 			let price = item.value + 'Price';
 			let calories = item.value + 'Calories';
-			objOrder[checkMass] = {
+			objOrder.push({
+				name: item.value,
 				rate: obj[price],
 				calory: obj[calories]
-			};
-			//objOrder[price, calories] = obj[price], obj[calories];
-
-
+			});
 		}
-
 	})
 
 }
@@ -169,6 +169,56 @@ function sum(obj) {
 	return sum;
 }
 
+class WorkObj {
+
+	newObj() {
+		this.list = objOrder;
+	}
+
+	render() {
+		const goodsList = this.list.map(item => {
+			const goodsItem = new WholeOrder(item);
+			return goodsItem.render()
+
+		}).join('');
+		document.querySelector('.info').innerHTML = goodsList;
+
+	}
+
+
+	summaRate() {
+		return this.list.reduce((prev, { rate }) => {           //Сумма Заказа
+			return prev + parseInt(rate);
+
+		}, 0)
+	}
+
+	summaCalor() {
+		return this.list.reduce((prev, { calory }) => {           //Сумма Калорий
+			return prev + parseInt(calory);
+
+		}, 0)
+	}
+}
+
+
+class WholeOrder {
+	constructor({ name = "Продукт не опознан", rate = "Уточните цену", calory = "Калорийность неизвестна" }) {
+		this.name = name;
+		this.rate = rate;
+		this.calory = calory;
+	}
+	render() {
+		return `
+		     <div class="goods-item">
+		 		<h3>Название: ${this.name}</h3>
+		    	<p>Цена: ${this.rate}</p>
+					<p>калории: ${this.calory}</p>
+		     </div>
+		`
+	}
+}
+
 
 
 
@@ -176,9 +226,49 @@ button.addEventListener('click', e => {
 	e.preventDefault();
 	whotClick();
 	console.log(objOrder);
+	const workJob = new WorkObj(objOrder);
+	workJob.newObj();
+	workJob.render();
+
 }, false);
 
+buttonPrace.addEventListener('click', e => {
+	e.preventDefault();
+	whotClick();
+	console.log(objOrder);
+	const workJob = new WorkObj(objOrder);
+	workJob.newObj();
+	let summaRate = workJob.summaRate();
+	const renderSumma = (summa) => {
+		return `
+			<div class="goods-item">
+			<h3>Общая сумма заказа ${summa}</h3>
+			</div>
+		`;
+	}
+	const summa = renderSumma(summaRate);
+	document.querySelector('.info').innerHTML = summa;
 
+}, false);
+
+buttonCalory.addEventListener('click', e => {
+	e.preventDefault();
+	whotClick();
+	console.log(objOrder);
+	const workJob = new WorkObj(objOrder);
+	workJob.newObj();
+	let summaCalor = workJob.summaCalor();
+	const renderSumma = (summa) => {
+		return `
+			<div class="goods-item">
+			<h3>Общая калорийность заказа ${summa}</h3>
+			</div>
+		`;
+	}
+	const summa = renderSumma(summaCalor);
+	document.querySelector('.info').innerHTML = summa;
+
+}, false);
 
 
 
