@@ -1,5 +1,4 @@
 /*  var, let, const */
-
 function learnVariablesExample_0() {
   {
     try {
@@ -62,8 +61,8 @@ function learnVariablesExample_6() {
 // learnVariablesExample_6();
 
 function learnVariablesExample_7() {
-  console.log(x);
   let x = 'test';
+  console.log(x);
 }
 // learnVariablesExample_7();
 
@@ -99,12 +98,13 @@ function learnVariablesExample_10() {
 
 /*  Деструкуризация */
 function destructurizationExample_1() {
-  const colorList = ['red', 'green', 'blue'];
-  const [ c1, c2 ] = colorList;
+  const colorList = ['red', 'green', 'blue', 'yellow'];
+  const [ c1, c2,  ...arr ] = colorList;
+  debugger
   console.log('c1 - ', c1);
-  console.log('c2 - ', c2);
 }
-// destructurizationExample_1()
+// destructurizationExample_1();
+
 
 function destructurizationExample_2() {
   const user = {
@@ -113,24 +113,24 @@ function destructurizationExample_2() {
     age: 20,
     address: 'Moscow'
   };
-  const { name, age, ...rest } = user;
+  const { name, ...rest } = user;
+  
   console.log('name - ', name);
   console.log('rest - ', rest);
   console.log('user - ', user);
 }
-// destructurizationExample_2()
+destructurizationExample_2()
 
-function destructurizationExample_3() {
-  const user = {
-    id: '1',
-    name: 'John',
-    address: 'Moscow'
-  };
+function destructurizationExample_3(user) {
   const { name = 'Default Name', age = 40 } = user;
   console.log('name - ', name);
   console.log('age - ', age);
 }
-// destructurizationExample_3()
+// destructurizationExample_3({
+//   id: '1',
+//   name: 'John',
+//   address: 'Moscow'
+// })
 
 function destructurizationExample_4() {
   const user = {
@@ -139,12 +139,14 @@ function destructurizationExample_4() {
     address: 'Moscow'
   };
   const { name: innerName, age: innerAge } = user;
+  debugger
   console.log('innerName - ', innerName);
   console.log('innerAge - ', innerAge);
 }
 // destructurizationExample_4()
 
 function destructurizationExample_5({ name, age, ...rest }) {
+  debugger
   console.log('name - ', name);
   console.log('age - ', age);
   console.log('rest - ', rest);
@@ -164,10 +166,7 @@ function destructurizationExample_6() {
       password: 'qwerty'
     }
   };
-  const { name, data: { login, password } } = user;
-  console.log('name - ', name);
-  console.log('login - ', login);
-  console.log('password - ', password);
+  const { name, data: { login } } = user;
 }
 // destructurizationExample_6()
 
@@ -189,11 +188,13 @@ function spreadExample_1() {
     type: 'user'
   };
   
+  let x = 10;
+  
   const item = {
+    id: 194831,
     ...user,
     ...defaultData,
-    priority,
-    id: 194831,
+    x,
   };
   console.log('item - ', item);
 }
@@ -223,7 +224,7 @@ function spreadExample_3() {
     ...color_2,
     'white'
   ];
-  
+  debugger
   console.log('colors - ', colors)
 }
 // spreadExample_3();
@@ -244,18 +245,24 @@ function spreadExample_4() {
 
 /* Шаблонные строки */
 function stringLiteralsExample_1() {
-  function getTime() {
-    return new Date()
-  }
+  let x = 'Hallo'
+  let y = 'world'
   
-  const name = 'John';
-  const message = `Hello, ${name}! It's ${getTime()} now.`
+  let text = x + ' ' + y + '!'
+  
+  let text2 = `${x} ${y}!`;
+  
+  // function getTime() {
+  //   return new Date()
+  // }
+  //
+  // const name = 'John';
+  // const message = `Hello, ${name}! It's ${getTime()} now.`
 }
-// stringLiteralsExample_1()
+stringLiteralsExample_1()
 
 
 /* Стрелочные функции */
-
  function arrowFunctionExample_1() {
    const obj = {
      x: 10,
@@ -294,8 +301,8 @@ function arrowFunctionExample_2() {
 
 
 /*  Дефолтные аргументы */
-
 function defaultArgumentsExample_1(name = 'Default Name', age = 20, address = 'Moscow') {
+  debugger
    console.log ({
      name,
      age,
@@ -303,6 +310,6 @@ function defaultArgumentsExample_1(name = 'Default Name', age = 20, address = 'M
    })
 }
 
-// defaultArgumentsExample_1('John',undefined,'Rio')
+defaultArgumentsExample_1('John')
 
 
