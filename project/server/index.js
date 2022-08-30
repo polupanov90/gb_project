@@ -38,6 +38,26 @@ function getBasketGoods() {
   })
 }
 
+function deleteBasketGood(_id) {
+  return getRawBasketGoods().then((basketGoods) => {
+    return basketGoods.map((basketGood) => {
+      if (basketGood.id === _id) {
+        return {
+          ...basketGood,
+          count: basketGood.count - 1
+        }
+        
+      } else {
+        return basketGood;
+      }
+    }).filter(({ count }) => count > 0);
+  }).then((result) => {
+    return writeFile(BASKET_GOODS, JSON.stringify(result)).then(() => {
+      return result;
+    })
+  })
+}
+
 function addBasketGood(_id) {
   return getRawBasketGoods().then((basketGoods) => {
     if (basketGoods.find(({ id }) => id === _id)) {
@@ -84,8 +104,18 @@ app.get('/basket_goods', (req, res) => {
 
 app.put('/basket_goods', (req, res) => {
   addBasketGood(req.body.id).then((basketGoods) => {
-    res.send(JSON.stringify(basketGoods))
+    getBasketGoods().then((data) => {
+      res.send(data)
+    });
   })
+});
+app.delete('/basket_goods', (req, res) => {
+  deleteBasketGood(req.body.id).then(() => {
+    getBasketGoods().then((data) => {
+      res.send(data)
+    });
+  })
+  
 });
 
 app.listen('8000', () => {

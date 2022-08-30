@@ -54,7 +54,7 @@ function init() {
                ></div>
             </div>
             <div class="basket-card__content">
-               <basket-goods-item v-for="item in basketGoodsItems" :item="item"></basket-goods-item>
+               <basket-goods-item v-for="item in basketGoodsItems" :item="item" @delete="deleteBasketGood" @add="addGood"></basket-goods-item>
             </div>
          </div>
       </div>
@@ -63,6 +63,22 @@ function init() {
       service(GET_BASKET_GOODS).then((data) => {
         this.basketGoodsItems = data
       })
+    },
+    methods: {
+      deleteBasketGood(id) {
+        service(GET_BASKET_GOODS, "DELETE", {
+          id
+        }).then((data) => {
+          this.basketGoodsItems = data
+        })
+      },
+      addGood(id) {
+        service(GET_BASKET_GOODS, 'PUT', {
+          id
+        }).then((data) => {
+          this.basketGoodsItems = data
+        })
+      }
     }
   })
   
@@ -75,8 +91,8 @@ function init() {
          <h3>{{item?.data?.product_name}}</h3>
          <div>count: {{item?.count}}</div>
          <div>total: {{item?.total}}</div>
-         <custom-button>добавить</custom-button>
-         <custom-button>удалить</custom-button>
+         <custom-button @click="$emit('add', item.data.id)">добавить</custom-button>
+         <custom-button @click="$emit('delete', item.data.id)">удалить</custom-button>
       </div>
     `
   })
@@ -120,7 +136,6 @@ function init() {
       onSearchComponentChange(value) {
         this.search = value
       }
-      
     },
     computed: {
       filteredItems() {
