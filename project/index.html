@@ -10,10 +10,9 @@
 <body>
    <div id="root">
       <header>
-         <h1 class="title">eShop</h1>
+         <h1 class="title">eShop - {{search}}</h1>
          <div class="search">
-            <input type="text" class="goods-search" v-model="search"/>
-            <custom-button v-on:click="filterItems">искать</custom-button>
+            <search-component v-model="search"></search-component>
          </div>
          <div class="actions">
             <custom-button v-on:click="setVisionCard">Корзина</custom-button>
